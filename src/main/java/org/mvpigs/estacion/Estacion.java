@@ -1,5 +1,6 @@
 package org.mvpigs.estacion;
 
+import org.mvpigs.bicicleta.Bicicleta;
 import java.util.Arrays;
 
 public class Estacion {
@@ -7,6 +8,8 @@ public class Estacion {
     private String name;
     private int anclajes;
     private Boolean[] estadoAnclajes;
+    private Bicicleta[] flota;
+
 
     public Estacion(int id,String name,int anclajes){
         this.estadoAnclajes = new Boolean[anclajes];
@@ -22,11 +25,20 @@ public class Estacion {
         }
     }
 
-    private Boolean[] getEstadoAnclajes() {
+
+    public Bicicleta[] getFlota() {
+        return flota;
+    }
+
+    public void setFlota(Bicicleta[] flota) {
+        this.flota = flota;
+    }
+
+    public Boolean[] getEstadoAnclajes() {
         return estadoAnclajes;
     }
 
-    private void setEstadoAnclajes(Boolean[] estadoAnclajes) {
+    public void setEstadoAnclajes(Boolean[] estadoAnclajes) {
         this.estadoAnclajes = estadoAnclajes;
     }
 
