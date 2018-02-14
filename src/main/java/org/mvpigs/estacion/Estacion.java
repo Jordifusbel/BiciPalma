@@ -35,7 +35,10 @@ public class Estacion {
         this.anclajes = anclajes;
     }
 
+    public void consultarEstacion(){
+        System.out.print("La estacion con id " + this.id + ", llamada " + this.name + ", tiene " + this.anclajes + " anclajes");
 
+    }
 
 
 }
