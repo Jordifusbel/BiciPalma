@@ -3,6 +3,13 @@ package org.mvpigs.estacion;
 public class Estacion {
     private int id;
     private String name;
+    private int anclajes;
+
+    public Estacion(int id,String name,int anclajes){
+        this.setId(id);
+        this.setName(name);
+        this.setAnclajes(anclajes);
+    }
 
     public int getId() {
         return id;
@@ -28,6 +35,7 @@ public class Estacion {
         this.anclajes = anclajes;
     }
 
-    private int anclajes;
+
+
 
 }
