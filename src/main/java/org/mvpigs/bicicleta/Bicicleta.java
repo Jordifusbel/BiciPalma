@@ -29,7 +29,7 @@ public class Bicicleta {
     }
 
     public void anclarBici(Estacion actual) {
-        Bicicleta[] flotaActual =actual.getFlota();
+        Bicicleta[] flotaActual = actual.getFlota();
         if (!this.anclada){
             for (int n=0; n<flotaActual.length && !this.anclada; n++){
                 if (flotaActual[n] == null){

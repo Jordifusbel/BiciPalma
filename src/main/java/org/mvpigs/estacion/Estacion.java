@@ -1,30 +1,30 @@
 package org.mvpigs.estacion;
 
 import org.mvpigs.bicicleta.Bicicleta;
-import java.util.Arrays;
 
 public class Estacion {
     private int id;
     private String name;
     private int anclajes;
-    private Boolean[] estadoAnclajes;
     private Bicicleta[] flota;
 
 
     public Estacion(int id,String name,int anclajes){
-        this.estadoAnclajes = new Boolean[anclajes];
-        Arrays.fill(this.estadoAnclajes, true);
+        this.flota = new Bicicleta[anclajes];
         this.setId(id);
         this.setName(name);
         this.setAnclajes(anclajes);
     }
 
-    public void mostrarAnclajes(){
-        for (int n = 0; n < this.estadoAnclajes.length ; n++){
-            System.out.println("Anclaje" + n + ":" + this.estadoAnclajes[n]);
+    public void mostrarAnclajes() {
+        for (int n = 0; n < this.flota.length; n++) {
+            if (this.flota[n] != null) {
+                System.out.println("Anclaje" + (n + 1) + ": " + this.flota[n].getId());
+            } else {
+                System.out.println("Anclaje" + (n + 1) + ": disponible");
+            }
         }
     }
-
 
     public Bicicleta[] getFlota() {
         return flota;
@@ -34,13 +34,6 @@ public class Estacion {
         this.flota = flota;
     }
 
-    public Boolean[] getEstadoAnclajes() {
-        return estadoAnclajes;
-    }
-
-    public void setEstadoAnclajes(Boolean[] estadoAnclajes) {
-        this.estadoAnclajes = estadoAnclajes;
-    }
 
     public int getId() {
         return id;
@@ -67,7 +60,7 @@ public class Estacion {
     }
 
     public void consultarEstacion(){
-        System.out.print("La estacion con id " + this.id + ", llamada " + this.name + " tiene " + this.anclajes + " anclajes");
+        System.out.println("La estacion con id " + this.id + ", llamada " + this.name + " tiene " + this.anclajes + " anclajes");
 
     }
 
