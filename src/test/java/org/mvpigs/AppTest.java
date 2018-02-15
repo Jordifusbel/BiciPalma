@@ -1,35 +1,23 @@
 package org.mvpigs;
 
-import junit.framework.Assert;
-import junit.framework.Test;
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.mvpigs.bicicleta.Bicicleta;
 import org.mvpigs.estacion.Estacion;
 
-public class AppTest
-    extends TestCase {
+public class AppTest extends TestCase {
 
-    /**
-     * @Test
-    public void testConsEst(){
-        Assert.assertEquals(Estacion.consultarEstacion(), "La estacion con id 1, llamada Manacor tiene 6 anclajes" );
-    }**/
+    @Test
+    public void testApp() {
+        Estacion estacion = new Estacion(0, "Test station", 2);
+        Bicicleta bicicleta = new Bicicleta(false, 1000);
 
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+        bicicleta.anclarBici(estacion);
 
-
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-
-    public void testApp()
-    {
-        assertTrue( true );
+        assertTrue(bicicleta.getAnclada());
+        assertNotNull(estacion.getFlota()[0]);
     }
 }
 

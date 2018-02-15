@@ -40,4 +40,13 @@ public class Bicicleta {
         }
     }
 
+    public void sacarBiciConcreta(Estacion actual) {
+        Bicicleta[] flotaActual = actual.getFlota();
+        for (int n=0; n<flotaActual.length; n++)
+            if (flotaActual[n]==this){
+            flotaActual[n] = null;
+            this.anclada = false;
+            }
+    }
+
 }
